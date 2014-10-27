@@ -1,0 +1,125 @@
+* {
+	box-sizing: border-box;
+}
+
+/* Mobile first */
+
+body {
+	background-color: @peter-river;
+	color: black;
+	width: 90%;
+	margin: 0 auto;
+
+	> header {
+		display: flex;
+		flex-flow: column wrap;
+
+		> section {
+			order: -2;
+		}
+
+		> nav {
+			order: -1;
+
+			> ul {
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+			}
+		}
+
+		> h1, 
+		> p {
+			flex-grow: 1;
+		}
+
+		> form > input {
+			width: 100%;
+		}
+
+		> * {
+			background: @clouds;
+			width: 100%;
+			height: 150px;
+			margin: 10px 0 0 0;
+			padding: 10px;
+			border-radius: 7px;
+		}
+	}
+}
+
+main {
+	> h1 {
+		color: @clouds;
+	}
+
+	> article {
+		background-color: @clouds;
+		color: @midnight-blue;
+		padding: 20px;
+		border-radius: 7px;
+
+		&+ article {
+			margin-top: 20px;
+		}
+
+		header > h1 {
+			padding: 0;
+			margin: 0;
+		}
+	}
+}
+
+// Media queries
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in mobile first */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+
+	body {
+		background-color: @amethyst;
+		width: 90%;
+		margin: 0 auto;
+
+		> header {
+			display: flex;
+			flex-flow: row wrap;
+
+			> * {
+				width: 10rem;
+				height: 10rem;
+				margin: 10px 10px 0 0;
+			}
+
+		}
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+
+	body > header {
+
+		> nav ul {
+
+			> li + li {
+				margin-top: 5px;
+
+				> a {
+
+					&:hover,
+					&:focus {
+						background-color: #9b59b6;
+						color: white;
+					}
+				}
+			} 
+		}
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {}
+
+
