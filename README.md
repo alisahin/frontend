@@ -3,9 +3,7 @@ frontend
 
 mobile first flexbox template with less and modernizr
 
-Breakdown
-
-# app
+# breakdown app
     # index.html
     # static
         # css
