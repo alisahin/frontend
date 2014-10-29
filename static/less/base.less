@@ -4,11 +4,15 @@
 
 /* Mobile first */
 
+html {
+	border-top: 3px solid @alizarin;
+}
+
 body {
-	background-color: @peter-river;
-	color: black;
+	background: url(../img/grey.png);
+	font-family: 'Lato', sans-serif;
 	width: 90%;
-	margin: 0 auto;
+	margin: 20px auto;
 
 	> header {
 		display: flex;
@@ -31,41 +35,107 @@ body {
 		> h1, 
 		> p {
 			flex-grow: 1;
-		}
-
-		> form > input {
-			width: 100%;
+			color: @concrete;
 		}
 
 		> * {
-			background: @clouds;
+			border-radius: 10px;
+			box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
 			width: 100%;
 			height: 150px;
-			margin: 10px 0 0 0;
-			padding: 10px;
-			border-radius: 7px;
-		}
-	}
-}
-
-main {
-	> h1 {
-		color: @clouds;
-	}
-
-	> article {
-		background-color: @clouds;
-		color: @midnight-blue;
-		padding: 20px;
-		border-radius: 7px;
-
-		&+ article {
-			margin-top: 20px;
-		}
-
-		header > h1 {
-			padding: 0;
+			overflow: hidden;
 			margin: 0;
+			margin-top: 10px;
+			margin-right: 10px;
+			padding: 10px;
+		}
+	}
+
+	> main {
+		display: flex;
+		flex-flow: column wrap;
+		margin-top: 30px;
+		font-size: 1em;
+		line-height: 2em;
+
+		> * {
+			padding: 20px;
+			flex: 1;
+		}
+
+		> section {
+			flex: 2;
+			background-color: white;
+			border: 2px dashed @turquoise;
+			border-radius: 30px 0 0 0;
+			box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+			max-width: 62em;
+
+			> article {
+				
+				> header {
+					font-size: 1rem;
+
+					h1,p {
+						margin: 0;
+					}
+
+					p {
+						color: @concrete;
+					}
+				}
+
+				blockquote {
+					color: @concrete;
+					border-left: 7px solid @clouds;
+					padding-left: 10px;
+
+					&:before {
+						
+					}
+				}
+			}
+		}
+
+		> aside {
+			border: 1px dashed @turquoise;
+			border-radius: 0 0 30px 30px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+			color: @wet-asphalt;
+
+			> section {
+				margin: 40px 0;
+
+				> p {
+
+					> time {
+						background-color: @alizarin;
+						box-shadow: 2px 2px 3px @pomegranate;
+						color: white;
+						padding: 5px;
+						margin-right: 10px;
+						border-radius: 3px;
+					}
+				}
+
+				&:nth-of-type(2n) {
+					margin-left: -20px;
+					margin-right: -20px;
+					padding: 20px;
+					border-top: 1px dashed @turquoise;
+					border-bottom: 1px dashed @turquoise;
+				}
+			}
+		}
+
+		> h1 {
+			color: @clouds;
+			display: block;
+			width: 100%;
+		}
+
+		a {
+			color: @turquoise;
 		}
 	}
 }
@@ -78,20 +148,37 @@ main {
 @media (min-width: @screen-sm-min) {
 
 	body {
-		background-color: @amethyst;
 		width: 90%;
-		margin: 0 auto;
 
 		> header {
-			display: flex;
 			flex-flow: row wrap;
 
 			> * {
 				width: 10rem;
 				height: 10rem;
-				margin: 10px 10px 0 0;
+			}
+		}
+
+		> main {
+			flex-flow: row wrap;
+
+			> section {
+				border-radius: 30px 0 0 30px;
 			}
 
+			> aside {
+				border-radius: 0 30px 30px 0;
+			}
+
+			a {
+				transition: color .5s ease, text-shadow .5s ease;
+
+				&:hover,
+				&:focus {
+					color: @wet-asphalt;
+					text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+				}
+			}
 		}
 	}
 }
@@ -101,20 +188,18 @@ main {
 
 	body > header {
 
-		> nav ul {
+		> nav > ul  {
+			> li a {
+				text-decoration: none;
+				color: @turquoise;
+				transition: background-color .5s ease, color .5s ease;
 
-			> li + li {
-				margin-top: 5px;
-
-				> a {
-
-					&:hover,
-					&:focus {
-						background-color: #9b59b6;
-						color: white;
-					}
+				&:hover,
+				&:focus {
+					background-color: @turquoise;
+					color: white;
 				}
-			} 
+			}
 		}
 	}
 }
