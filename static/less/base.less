@@ -29,17 +29,32 @@ body {
 				margin: 0;
 				padding: 0;
 				overflow: hidden;
+
+				display: flex;
+				flex-flow: column wrap;
+				justify-content: flex-start;
+
+				> li a {
+					background-color: @clouds;
+					text-decoration: none;
+					color: @alizarin;
+					display: block;
+					border-radius: 5px;
+				}
+
+				> li + li {
+					padding-top: 10px;
+				}
 			}
 		}
 
 		> h1, 
 		> p {
-			flex-grow: 2;
 			color: @wet-asphalt;
+			flex-grow: 2;
 		}
 
 		> * {
-			flex: 1 50%;
 			border-radius: 10px;
 			border: 1px dashed @turquoise;
 			box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
@@ -48,6 +63,8 @@ body {
 			margin: 0;
 			margin-top: 10px;
 			padding: 10px;
+
+			flex: 1 50%;
 		}
 
 		a {
@@ -58,29 +75,31 @@ body {
 
 	// flex box wrapper
 	div {
-		display: flex;
-		flex-flow: column wrap;
 		margin-top: 30px;
 		font-size: 1em;
 		line-height: 2em;
 
+		display: flex;
+		flex-flow: column wrap;
+
 		> * {
-			flex: 1;
 			padding: 20px;
+			flex: 1;
 		}
 
 		> h1 {
-			flex: 1 100%;
 			color: @alizarin;
+			flex: 1 100%;
 		}
 
 		> main {
-			flex-grow: 2;
 			background-color: white;
 			border: 2px dashed @turquoise;
 			border-radius: 30px 0 0 0;
 			box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 			max-width: 62em;
+
+			flex-grow: 2;
 
 			> article {
 				color: @wet-asphalt;
@@ -185,8 +204,8 @@ body {
 			flex-flow: row wrap;
 
 			> * {
-				flex: 1 25%;
 				margin-left: 5px;
+				flex: 1 25%;
 			}
 		}
 
@@ -224,16 +243,20 @@ body {
 		}
 
 		> nav > ul  {
+			list-style: none;
+			margin: 0;
+
 			> li a {
-				text-decoration: none;
-				color: @turquoise;
-				transition: background-color .5s ease, color .5s ease;
-				word-wrap: break-word;
+				background-color: transparent;
+				display: block;
+				border-radius: 2px;
+				transition: background-color .5s ease, color .5s ease, padding .5s ease;
 
 				&:hover,
 				&:focus {
 					background-color: @turquoise;
 					color: white;
+					padding-left: 10px;
 				}
 			}
 		}
