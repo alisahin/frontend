@@ -30,63 +30,90 @@ body > header > nav > ul {
 body > header > h1,
 body > header > p {
   flex-grow: 1;
-  color: #95a5a6;
+  color: #34495e;
 }
 body > header > * {
+  flex: 1 100%;
   border-radius: 10px;
+  border: 1px dashed #01c9a9;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  height: 150px;
+  min-height: 150px;
+  height: auto;
   overflow: hidden;
   margin: 0;
   margin-top: 10px;
-  margin-right: 10px;
   padding: 10px;
 }
-body > main {
+body > header a {
+  color: #01c9a9;
+}
+body div {
   display: flex;
   flex-flow: column wrap;
   margin-top: 30px;
   font-size: 1em;
   line-height: 2em;
 }
-body > main > * {
-  padding: 20px;
+body div > * {
   flex: 1;
+  padding: 20px;
 }
-body > main > section {
-  flex: 2;
+body div > h1 {
+  flex: 1 100%;
+  color: #ff3452;
+}
+body div > main {
+  flex-grow: 2;
   background-color: white;
   border: 2px dashed #01c9a9;
   border-radius: 30px 0 0 0;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
   max-width: 62em;
 }
-body > main > section > article > header {
+body div > main > article {
+  color: #34495e;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+body div > main > article > header {
   font-size: 1rem;
 }
-body > main > section > article > header h1,
-body > main > section > article > header p {
+body div > main > article > header h1,
+body div > main > article > header p {
   margin: 0;
 }
-body > main > section > article > header p {
+body div > main > article > header p {
   color: #95a5a6;
 }
-body > main > section > article blockquote {
+body div > main > article > p {
+  font-size: 1.5rem;
+}
+body div > main > article blockquote {
   color: #95a5a6;
   border-left: 7px solid #ecf0f1;
   padding-left: 10px;
 }
-body > main > aside {
+body div > main > article:nth-of-type(2n) {
+  background-color: #ecf0f1;
+  border-top: 1px dashed #01c9a9;
+  border-bottom: 1px dashed #01c9a9;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 20px;
+}
+body div > aside {
   border: 1px dashed #01c9a9;
   border-radius: 0 0 30px 30px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   color: #34495e;
 }
-body > main > aside > section {
+body div > aside > h1 {
+  margin: 0;
+}
+body div > aside > section {
   margin: 40px 0;
 }
-body > main > aside > section > p > time {
+body div > aside > section > p > time {
   background-color: #ff3452;
   box-shadow: 2px 2px 3px #c0392b;
   color: white;
@@ -94,19 +121,18 @@ body > main > aside > section > p > time {
   margin-right: 10px;
   border-radius: 3px;
 }
-body > main > aside > section:nth-of-type(2n) {
+body div > aside > section:nth-of-type(2n) {
   margin-left: -20px;
   margin-right: -20px;
   padding: 20px;
   border-top: 1px dashed #01c9a9;
   border-bottom: 1px dashed #01c9a9;
 }
-body > main > h1 {
-  color: #ecf0f1;
-  display: block;
-  width: 100%;
+body div > footer {
+  flex: 1 100%;
+  text-align: center;
 }
-body > main a {
+body div a {
   color: #01c9a9;
 }
 /* Extra small devices (phones, less than 768px) */
@@ -120,29 +146,32 @@ body > main a {
     flex-flow: row wrap;
   }
   body > header > * {
-    width: 10rem;
-    height: 10rem;
+    flex: 1 25%;
+    margin-left: 5px;
   }
-  body > main {
+  body > div {
     flex-flow: row wrap;
   }
-  body > main > section {
+  body > div > main {
     border-radius: 30px 0 0 30px;
   }
-  body > main > aside {
+  body > div > aside {
     border-radius: 0 30px 30px 0;
   }
-  body > main a {
+  body > div a {
     transition: color 0.5s ease, text-shadow 0.5s ease;
   }
-  body > main a:hover,
-  body > main a:focus {
+  body > div a:hover,
+  body > div a:focus {
     color: #34495e;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
   }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  body > header > * {
+    flex: 1 10%;
+  }
   body > header > nav > ul > li a {
     text-decoration: none;
     color: #01c9a9;
@@ -156,12 +185,13 @@ body > main a {
 }
 /* Large devices (large desktops, 1200px and up) */
 form input {
+  -webkit-appearance: none;
+  color: #ff3452;
   width: 100%;
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #bdc3c7;
   background-color: #ecf0f1;
   border: 1px solid #bdc3c7;
   border-radius: 4px;
@@ -172,4 +202,13 @@ form input:focus {
   border-color: #3498db;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+form :-moz-placeholder {
+  color: #95a5a6;
+}
+form ::-webkit-input-placeholder {
+  color: #95a5a6;
+}
+form ::-ms-input-placeholder {
+  color: #95a5a6;
 }
