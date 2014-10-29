@@ -14,7 +14,7 @@ body {
 }
 body > header {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
 }
 body > header > section {
   order: -2;
@@ -29,16 +29,15 @@ body > header > nav > ul {
 }
 body > header > h1,
 body > header > p {
-  flex-grow: 1;
+  flex-grow: 2;
   color: #34495e;
 }
 body > header > * {
-  flex: 1 100%;
+  flex: 1 50%;
   border-radius: 10px;
   border: 1px dashed #01c9a9;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
   min-height: 150px;
-  height: auto;
   overflow: hidden;
   margin: 0;
   margin-top: 10px;
@@ -176,6 +175,7 @@ body div a {
     text-decoration: none;
     color: #01c9a9;
     transition: background-color 0.5s ease, color 0.5s ease;
+    word-wrap: break-word;
   }
   body > header > nav > ul > li a:hover,
   body > header > nav > ul > li a:focus {
