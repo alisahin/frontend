@@ -267,6 +267,7 @@ body > div a {
     -moz-flex-grow: 0;
     -ms-flex-grow: 0;
     flex-grow: 0;
+    display: none;
   }
   body > header > h1,
   body > header > p {
