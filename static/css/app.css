@@ -85,6 +85,7 @@ body > header > nav {
   -moz-order: -1;
   -ms-order: -1;
   order: -1;
+  display: none;
 }
 body > header > nav > ul {
   display: -webkit-flex;
@@ -267,7 +268,7 @@ body > div a {
     -moz-flex-grow: 0;
     -ms-flex-grow: 0;
     flex-grow: 0;
-    display: none;
+    display: block;
   }
   body > header > h1,
   body > header > p {
