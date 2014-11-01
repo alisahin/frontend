@@ -16,6 +16,9 @@ ul {
 .hide {
   display: none;
 }
+img {
+  max-width: 100%;
+}
 /* Mobile first */
 html {
   border-top: 3px solid #ff3452;
@@ -219,7 +222,7 @@ body > div > aside {
   color: #34495e;
 }
 body > div > aside > h1 {
-  margin: 0;
+  margin: 0 0 20px;
 }
 body > div > aside > section {
   margin: 40px 0;
