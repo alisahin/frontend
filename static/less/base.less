@@ -143,7 +143,7 @@ body {
 // flex box wrapper
 body > div {
 	margin-top: 30px;
-	font-size: 1em;
+	font-size: 1.2em;
 	line-height: 2em;
 	.flex-display(flex);
 	.flex-flow(column wrap);
@@ -172,7 +172,6 @@ body > div {
 			margin-bottom: 20px;
 			
 			> header {
-				font-size: 1rem;
 
 				h1,p {
 					margin: 0;
@@ -181,10 +180,6 @@ body > div {
 				p {
 					color: @concrete;
 				}
-			}
-
-			> p {
-				font-size: 1.5rem;
 			}
 
 			blockquote {
@@ -222,14 +217,20 @@ body > div {
 				border-top: 1px dashed @turquoise;
 				border-bottom: 1px dashed @turquoise;
 			}
-
-			> time {
+			
+			h1 > time,
+			p > time {
 				background-color: @alizarin;
 				box-shadow: 2px 2px 3px @pomegranate;
 				color: white;
 				padding: 5px;
 				margin-right: 10px;
 				border-radius: 3px;
+			}
+
+			p > time,
+			h1 > time {
+				font-size: 1rem;
 			}
 		}
 	}
@@ -279,6 +280,22 @@ body > div {
 
 			> aside {
 				border-radius: 0 30px 30px 0;
+
+				> h1 {
+					font-size: 2rem;
+				}
+
+				> section {
+
+					h1 {
+						font-size: 1.5rem;
+					}
+
+					p > time,
+					h1 > time {
+						font-size: 1rem;
+					}
+				} 
 			}
 
 			a {
