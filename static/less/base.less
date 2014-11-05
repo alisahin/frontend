@@ -9,15 +9,15 @@ ul {
 	padding: 0;
 	list-style: none;
 }
-.show {
-	display: block;
-}
-.hide {
-	display: none; // hide toggle nav on larger screens
-}
-
 img {
 	max-width: 100%;
+}
+// used by Modernizr in static/js/app.js
+.active {
+	display: block; // show toggle nav for mobile viewports
+}
+.hidden {
+	display: none; // hide toggle nav on larger screens
 }
 
 /* Mobile first */
@@ -90,7 +90,6 @@ body {
 
 		> nav {
 			.flex-order(-1);
-			display: none;
 
 			> ul {
 				.flex-display(flex);
@@ -264,7 +263,6 @@ body > div {
 
 			> nav {
 				.flex-grow(0);
-				display: block;
 			}
 
 			> h1, > p {
